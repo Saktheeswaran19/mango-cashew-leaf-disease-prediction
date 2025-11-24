@@ -1,0 +1,11 @@
+fastapi==0.100.0
+uvicorn[standard]==0.22.0
+python-multipart==0.0.6    # to parse form-data uploads
+pillow==10.1.0             # image reading/processing
+numpy==1.26.0              # numerical operations (optional but common)
+# Optional / depending on your model:
+# torch==2.2.0             # if you use PyTorch
+# torchvision==0.17.0      # for transforms if using PyTorch
+# tensorflow==2.14.0       # if you use TensorFlow/Keras
+# onnxruntime==1.15.1      # if you run ONNX models
+# opencv-python==4.8.0.74  # if you prefer cv2 for preprocessing
