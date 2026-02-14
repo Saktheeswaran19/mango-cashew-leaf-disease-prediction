@@ -1,73 +1,238 @@
-# Welcome to your Lovable project
+🌿🍃 Multi-Crop Leaf Disease Detection System
+<p align="center"> <b>AI-Powered Deep Learning Platform for Mango & Cashew Disease Classification</b><br/> Built with React + FastAPI + TensorFlow </p>
+🚀 Project Overview
 
-## Project info
+This project is a full-stack AI web application that detects plant leaf diseases using Deep Learning.
 
-**URL**: https://lovable.dev/projects/6f121575-8a5c-4f00-84e6-5251cd995015
+It supports:
 
-## How can I edit this code?
+🥭 Mango Leaf Disease Classification
 
-There are several ways of editing your application.
+🌰 Cashew Leaf Disease Classification
 
-**Use Lovable**
+📊 Probability Distribution Visualization
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6f121575-8a5c-4f00-84e6-5251cd995015) and start prompting.
+📋 Severity Levels
 
-Changes made via Lovable will be committed automatically to this repo.
+💊 Treatment Recommendations
 
-**Use your preferred IDE**
+⚡ Real-time Inference
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The system uses trained CNN models (.h5) with Softmax output to classify diseases and display confidence levels through an interactive bar chart.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🧠 Key Features
 
-Follow these steps:
+✨ Multi-crop support (Mango + Cashew)
+✨ Separate AI models per crop
+✨ Probability distribution bar chart
+✨ Dynamic crop switching UI
+✨ Crop-specific treatment advice
+✨ Clean, responsive modern UI
+✨ FastAPI async inference
+✨ Scalable architecture
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🏗️ Tech Stack
+🎨 Frontend
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+React (TypeScript)
 
-# Step 3: Install the necessary dependencies.
-npm i
+Vite
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Tailwind CSS
+
+shadcn/ui
+
+Recharts
+
+React Router DOM
+
+TanStack React Query
+
+⚙ Backend
+
+FastAPI
+
+TensorFlow / Keras
+
+Pillow (PIL)
+
+NumPy
+
+AsyncIO
+
+📂 Project Structure
+leaf-snap-diagnosis/
+│
+├── frontend/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       │   ├── CropDetection.tsx
+│       │   ├── Mango.tsx
+│       │   ├── Cashew.tsx
+│       │   ├── Index.tsx
+│       │   └── NotFound.tsx
+│       ├── App.tsx
+│       └── main.tsx
+│
+├── server-backend/
+│   ├── server.py
+│   ├── model.py
+│   └── models/
+│       ├── mango_model.h5
+│       ├── cashew_model.h5
+│       ├── mango_class_map.json
+│       └── cashew_class_map.json
+
+🧪 Supported Diseases
+🥭 Mango Diseases
+
+Anthracnose
+
+Bacterial Canker
+
+Cutting Weevil
+
+Die Back
+
+Gall Midge
+
+Powdery Mildew
+
+Sooty Mould
+
+Healthy
+
+🌰 Cashew Diseases
+
+Anthracnose
+
+Gray Blight
+
+Red Rust
+
+Healthy
+
+🔄 System Workflow
+User selects crop →
+Uploads image →
+Frontend calls /api/analyze/{crop} →
+Backend loads correct model →
+Returns:
+  - Predicted Disease
+  - Confidence %
+  - Full Probability Distribution
+  - Severity Level
+  - Description
+  - Recommendations →
+Frontend renders results + bar chart
+
+📊 Probability Visualization
+
+The model uses a Softmax output layer, allowing the system to:
+
+Display top predicted disease
+
+Show confidence percentage
+
+Visualize full probability distribution via bar chart
+
+Example:
+
+Anthracnose → 82%
+Powdery Mildew → 10%
+Healthy → 5%
+Others → 3%
+
+🔌 API Endpoints
+Method	Endpoint	Description
+POST	/api/analyze/mango	Mango disease classification
+POST	/api/analyze/cashew	Cashew disease classification
+GET	/health	Server health check
+▶️ How to Run the Project
+1️⃣ Backend Setup
+cd server-backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn server:app --reload
+
+
+Backend runs at:
+
+http://127.0.0.1:8000
+
+2️⃣ Frontend Setup
+cd frontend
+npm install
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Frontend runs at:
 
-**Use GitHub Codespaces**
+http://localhost:5173
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🖼️ UI Features
 
-## What technologies are used for this project?
+Modern gradient hero section
 
-This project is built with:
+Crop toggle dropdown
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Drag & drop image upload
 
-## How can I deploy this project?
+Loading animation
 
-Simply open [Lovable](https://lovable.dev/projects/6f121575-8a5c-4f00-84e6-5251cd995015) and click on Share -> Publish.
+Result cards
 
-## Can I connect a custom domain to my Lovable project?
+Interactive bar chart
 
-Yes, you can!
+Severity-based styling
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+📈 Model Architecture
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Custom CNN Architecture
+
+Input size dynamically determined
+
+Softmax final layer
+
+Batch normalization
+
+Dropout regularization
+
+Probability output mapping
+
+🧩 Architecture Highlights
+
+✔ Modular multi-model backend
+✔ Reusable CropDetection component
+✔ Clean routing (/mango, /cashew)
+✔ Async non-blocking inference
+✔ Crop-specific knowledge base
+
+🔮 Future Improvements
+
+Grad-CAM Visualization
+
+Model Ensemble Comparison
+
+Deployment (AWS / Render)
+
+Image History Tracking
+
+User Authentication
+
+Database Integration
+
+Mobile Optimization
+
+📜 License
+
+This project is for academic and research purposes.
+
+👨‍💻 Author
+
+Developed as a Deep Learning + Full Stack AI project
+Demonstrating multi-crop disease classification using CNN models.
+
+🌟 If you found this project useful, consider giving it a star!
