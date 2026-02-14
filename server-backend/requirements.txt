@@ -1,8 +1,28 @@
+# --- FastAPI + Server ---
 fastapi==0.100.0
 uvicorn[standard]==0.22.0
-python-multipart==0.0.6    # to parse form-data uploads
-pillow==10.1.0             # image reading/processing
-numpy==1.26.0              # numerical operations (optional but common)
+python-multipart==0.0.6
+
+# --- Core ML dependencies ---
+tensorflow==2.20.0          # compatible with Python 3.11
+numpy==1.26.0
+pillow==10.1.0
+
+# --- Model evaluation dependencies ---
+scikit-learn==1.4.0         # compatible with numpy 1.26 + Python 3.11
+scipy==1.11.4               # required by newer sklearn versions
+
+# --- Pydantic (models & validation) ---
+pydantic==1.10.12
+
+# --- Useful backend tools ---
+typing-extensions==4.7.1
+
+# --- JSON & schema handling (optional, safe) ---
+jsonschema==4.19.0
+
+
+
 # Optional / depending on your model:
 # torch==2.2.0             # if you use PyTorch
 # torchvision==0.17.0      # for transforms if using PyTorch
